@@ -13,16 +13,21 @@ console.log(randomNumber);
 
 const getAClue = function (event) {
     event.preventDefault();
-    if (input.value < randomNumber) {
-        document.querySelector(".js-paragraph1").innerHTML = "Pista: Demasiado bajo"
+    if (input.value > 100) {
+        document.querySelector(".js-paragraph1").innerHTML = "El número debe estar entre 1 y 100";
+    }
+    else if (input.value < 1) {
+        document.querySelector(".js-paragraph1").innerHTML = "El número debe estar entre 1 y 100";
+    }
+    else if (input.value < randomNumber) {
+        document.querySelector(".js-paragraph1").innerHTML = "Pista: Demasiado bajo";
     }
     else if (input.value > randomNumber) {
-        document.querySelector(".js-paragraph1").innerHTML = "Pista: Demasiado alto"
+        document.querySelector(".js-paragraph1").innerHTML = "Pista: Demasiado alto";
     }
     else {
-        document.querySelector(".js-paragraph1").innerHTML = "¡Has ganado campeona!"
+        document.querySelector(".js-paragraph1").innerHTML = "¡Has ganado campeona!";
     }
-
 }
 
 button.addEventListener("click", getAClue);
